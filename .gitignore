@@ -18,11 +18,5 @@ sentiment_model.pt
 results/
 logs/
 
-# Notebook checkpoints
-.ipynb_checkpoints/
-dataset/.ipynb_checkpoints/
+.vscode/
 
-# Old local backup copies
-templates/* - Copy.html
-static/* - Copy.js
-static/* - Copy.css
