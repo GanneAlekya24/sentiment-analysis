@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Local editor/runtime files
+.vscode/*.log
+*.tmp
+
+# Large generated model artifacts
+sentiment_model.pt
+results/
+logs/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+dataset/.ipynb_checkpoints/
+
+# Old local backup copies
+templates/* - Copy.html
+static/* - Copy.js
+static/* - Copy.css

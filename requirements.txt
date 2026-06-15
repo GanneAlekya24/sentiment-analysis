@@ -1,0 +1,8 @@
+flask
+torch
+transformers
+scikit-learn
+pandas
+matplotlib
+wordcloud
+joblib

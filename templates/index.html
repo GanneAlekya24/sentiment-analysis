@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body class="dark-mode">
+    <main class="app-shell">
+        <section class="workspace" aria-labelledby="pageTitle">
+            <div class="topbar">
+                <div>
+                    <h1 id="pageTitle">Sentiment Analysis</h1>
+                </div>
+                <div class="toolbar" aria-label="App actions">
+                    <button id="themeToggle" class="icon-button" type="button" title="Toggle theme" aria-label="Toggle light or dark theme">
+                        <span id="themeIcon" aria-hidden="true">D</span>
+                    </button>
+                    <button id="clearBtn" class="icon-button" type="button" title="Clear text" aria-label="Clear text">
+                        <span aria-hidden="true">x</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="editor-panel">
+                <div class="editor-header">
+                    <label for="textInput">Review text</label>
+                    <span id="inputStats">0 words</span>
+                </div>
+                <textarea id="textInput" placeholder="Type, paste, upload, or speak a review to analyze sentiment..."></textarea>
+
+                <div class="action-grid">
+                    <button id="predictBtn" class="primary-action" type="button">Analyze</button>
+                    <button id="voiceBtn" type="button" aria-pressed="false">Start voice</button>
+                    <button id="speakBtn" type="button">Read result</button>
+                    <button id="uploadBtn" type="button">Upload .txt</button>
+                </div>
+
+                <p id="statusMessage" class="status-message" role="status">Ready for analysis.</p>
+            </div>
+
+            <section class="result-card" id="resultCard" aria-live="polite">
+                <div>
+                    <p class="eyebrow">Prediction</p>
+                    <h2><span id="sentiment">Waiting</span><span id="emoji" aria-hidden="true"></span></h2>
+                </div>
+                <div class="confidence-bar" aria-label="Confidence">
+                    <div id="confidenceFill"></div>
+                </div>
+                <div class="metric-row">
+                    <span id="confidenceText">Confidence: --</span>
+                    <span id="wordCountText">Words: --</span>
+                </div>
+                <div class="result-actions">
+                    <button id="copyResultBtn" type="button">Copy result</button>
+                    <button id="downloadHistoryBtn" type="button">Export history</button>
+                </div>
+            </section>
+        </section>
+
+        <aside class="insights-panel" aria-label="Analysis history">
+            <div class="panel-header">
+                <div>
+                    <p class="eyebrow">Session</p>
+                    <h2>Insights</h2>
+                </div>
+                <button id="clearHistoryBtn" class="text-button" type="button">Clear</button>
+            </div>
+
+            <div class="stats-grid">
+                <div>
+                    <span id="totalCount">0</span>
+                    <p>Total</p>
+                </div>
+                <div>
+                    <span id="positiveCount">0</span>
+                    <p>Positive</p>
+                </div>
+                <div>
+                    <span id="negativeCount">0</span>
+                    <p>Negative</p>
+                </div>
+                <div>
+                    <span id="neutralCount">0</span>
+                    <p>Neutral</p>
+                </div>
+            </div>
+
+            <div class="history-list" id="historyList">
+                <p class="empty-state">No reviews analyzed yet.</p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
