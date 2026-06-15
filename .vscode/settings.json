@@ -1,9 +1,0 @@
-{
-    "python.defaultInterpreterPath": "C:\\Users\\Ganne Alekya\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
-    "python.terminal.activateEnvironment": true,
-    "files.watcherExclude": {
-        "**/venv/**": true,
-        "**/__pycache__/**": true,
-        "**/.pytest_cache/**": true
-    }
-}
